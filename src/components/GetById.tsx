@@ -2,7 +2,7 @@ import {useReservationById} from "../hooks/UseAllOrderFood";
 import {FormEvent, useState} from "react";
 
 const GetById = () => {
-    const[id,setId] = useState<number|"">(1);
+    const[id,setId] = useState<number|"">(4);
     const{data:reservation, isLoading,error} = useReservationById(id as number);
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
