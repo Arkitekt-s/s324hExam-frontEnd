@@ -3,12 +3,8 @@
     width: 50%;
     margin-left: 0%;
     margin-right: 0%;
-
-
-
-
-
 }
+
 
 /* Clear floats after the columns */
 .row-R:after {
@@ -52,9 +48,11 @@
                     100% calc(100% - var(--d)),
                     var(--d) calc(100% - var(--d))
             );
-    transition: 0.5s;
-    padding: 10%;
-    background-color: #fff;
+    transition: 2.5s;
+    transition-delay: 2s;
+    padding: 5%;
+    margin-left: 30%;
+    background-color: #FE9400;
 
 
 }
@@ -84,7 +82,7 @@
     padding: 10%;
     margin-right: 30%;
     white-space: nowrap;
-    background-color: #fff;
+    background-color: #f1f1f1;
 }
 .left-R:hover {
     background: #f1f1f1;

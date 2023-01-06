@@ -4,7 +4,7 @@ import {
     create,
     deleteById,
     update,
-    search, getByPrice,
+    search, getByPrice, getByWeight,
 
 
 }
@@ -40,9 +40,15 @@ export const useReservationsByPrice = (id: number) => {
     return useQuery<OrderFood,Error>(
         ["price", id],// query key
         () => getByPrice(id),
-
     )
         }
+//get by Weight
+export const useReservationsByWeight = (id: number) => {
+    return useQuery<OrderFood,Error>(
+        ["Weight", id],// query key
+        () => getByWeight(id),
+    )
+}
 //search by keyword
 export const useReservationsBykeyword = (keyword: string) => {
     return useQuery<OrderFood[],Error>(
@@ -55,6 +61,7 @@ export const useReservationsBykeyword = (keyword: string) => {
 }
 
 //delete by id and update cache after delete is successful
+//useMutation is used to mutate data and update cache
 export const useDeleteReservationById = (id:number) => {
     const queryClientDelete = useQueryClient();
     return useMutation<OrderFood,Error, number>(
@@ -65,10 +72,11 @@ export const useDeleteReservationById = (id:number) => {
                 queryClientDelete.invalidateQueries("reservationsDelete").catch(err => { throw err})
                 queryClientDelete.invalidateQueries("reservations").catch(err => { throw err})
                 queryClientDelete.invalidateQueries("price").catch(err => { throw err})
-                toast.success("Reservation deleted successfully")
+                queryClientDelete.invalidateQueries("Weight").catch(err => { throw err})
+                toast.success("Order deleted successfully")
             },
             onError: () => {
-                toast.error("Reservation delete failed")
+                toast.error("Order delete failed")
             }
         }
     )
@@ -85,11 +93,13 @@ export const useCreateReservation = () => {
                 queryClientCreate.invalidateQueries("reservations").catch(err => { throw err})
                 queryClientCreate.invalidateQueries("reservationsDelete").catch(err => { throw err})
                 queryClientCreate.invalidateQueries("reservationsUpdate").catch(err => { throw err})
-                toast.success("Reservation created successfully")
+                queryClientCreate.invalidateQueries("price").catch(err => { throw err})
+                queryClientCreate.invalidateQueries("Weight").catch(err => { throw err})
+                toast.success("Order created successfully")
 
             },
             onError: () => {
-                toast.error("Reservation create failed")
+                toast.error("Order create failed")
             }
         }
     )
@@ -105,11 +115,13 @@ return useMutation<OrderFood,Error, OrderFood>(
             queryClientUpdate.invalidateQueries("reservationsUpdate").catch(err => { throw err})
             queryClientUpdate.invalidateQueries(["reservationById", id]).catch(err => { throw err})
             queryClientUpdate.invalidateQueries("reservations").catch(err => { throw err})
-            toast.success("Reservation updated successfully")
+            queryClientUpdate.invalidateQueries("price").catch(err => { throw err})
+            queryClientUpdate.invalidateQueries("Weight").catch(err => { throw err})
+            toast.success("Order updated successfully")
 
         },
         onError: () => {
-            toast.error("Reservation update failed")
+            toast.error("Order update failed")
         },
 
     }

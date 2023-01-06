@@ -2,10 +2,7 @@ import {useAllP} from "../../hooks/UseAllProduct";
 
 
 const GetAllProduct = () => {
-    const{data:member} = useAllP();
-
-
-
+    const{data:member,isLoading,error} = useAllP();
 
     return (
         <div>
@@ -27,6 +24,7 @@ const GetAllProduct = () => {
                             {member.name}</td>
                         <td>{member.price} DKK</td>
                         <td>{member.weight} Gram</td>
+
 
                     </tr>
                 ))}

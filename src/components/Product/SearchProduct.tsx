@@ -11,10 +11,10 @@ const SearchProduct = () => {
     }
     return (
         <div className="form-row">
-            <h1>Search Product</h1>
+            <h1 style={{margin:"3%",color:"white"}}>Search Product</h1>
             <div className="col-md-8 mb-3">
                 <form onSubmit={handleSubmit}>
-                    <input className="form-control-lg" type="text" placeholder="Search Product" value={keyword} onChange={(e) => setKeyword(e.target.value)}/>
+                    <input className="form-control-lg" type="text" placeholder="Search Product 🔍" value={keyword} onChange={(e) => setKeyword(e.target.value)}/>
                 </form>
                 {isLoading && <div>Loading...</div>}
                 {error && <div>Error: {error.message}</div>}
@@ -26,8 +26,8 @@ const SearchProduct = () => {
                                 <h1 style={{color: "black"}}>{reservation.id}</h1>
                                 <h2 style={{color: "black"}}>{reservation.name}</h2>
                                 <p style={{color: "black"}}>ORDER INFO</p>
-                                <p style={{color: "black"}}>Quantity: {reservation.weight}</p>
-                                <h5 style={{color: "black"}}>{reservation.price}</h5>
+                                <p style={{color: "black"}}>Weight-Gram: {reservation.weight}</p>
+                                <p style={{color: "black"}}>Price-DKK:{reservation.price}</p>
 
                             </div>
                         ))}

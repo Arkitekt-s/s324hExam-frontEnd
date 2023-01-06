@@ -3,7 +3,7 @@ import {FormEvent, useState} from "react";
 import * as React from 'react';
 
 
-import {useCreateD} from "../../hooks/UseAllDelivery";
+import {useCreateD, useDeleteD} from "../../hooks/UseAllDelivery";
 import {Delivery, Van} from "../../api/Models";
 // @ts-ignore
 import DatePicker from "react-datepicker";
@@ -14,6 +14,7 @@ import "react-datepicker/dist/react-datepicker.css";
 
 const CreatDelivery = () => {
     const {data: delivery ,mutateAsync, isLoading,isError} = useCreateD();
+
 
     const [date, setDate] = useState(new Date());
     const [destination, setDestination] = useState<string | "">("");
@@ -45,12 +46,13 @@ const CreatDelivery = () => {
     };
     return (
         <div className="form-row">
-            <h1>Create Delivery</h1>
+            <h1 style={{margin:"3%",color:"white"}}>Create Delivery</h1>
             <div className="col-md-8 mb-3">
                 <form onSubmit={handleSubmit}>
 
 
                     <DatePicker
+                        className="form-control datepicker"
                         selected={date}
                         onChange={handleDateChange}
                         dateFormat="yyyy/MM/dd"

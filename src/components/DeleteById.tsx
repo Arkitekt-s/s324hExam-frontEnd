@@ -1,15 +1,18 @@
 import {useDeleteReservationById } from "../hooks/UseAllOrderFood";
 import {FormEvent, useState} from "react";
+import {useParams} from "react-router-dom";
 
 const DeleteById = () => {
+
     const [id, setId] = useState<number|"">("");
-    const {mutateAsync, isLoading,isError} = useDeleteReservationById(id as number);
+    const {mutateAsync, isLoading,isError,data} = useDeleteReservationById(id as number);
 
     const handleSubmit = (event: FormEvent) => {
         event.preventDefault();
+        //mutateAsync means that the data is send to the server and the server will delete the data
         mutateAsync(id as number)
             .then((response) => {
-})
+            })
             .catch((error) => {
 
             });
@@ -19,12 +22,17 @@ const DeleteById = () => {
     };
     return (
         <div className="form-row">
-            <h1>Delete Order</h1>
-            <div className="col-md-8 mb-3">
-                <form onSubmit={handleSubmit}>
-                    <input className="form-control" type="number" value={id} onChange={(e) => setId(parseInt(e.target.value))}/>
 
-                    <button className="btn btn-danger mt-3" type="submit">Delete</button>
+            <div className="col-md-8 mb-3 ">
+                <form onSubmit={handleSubmit}>
+
+                    <input className="form-control mt-3" type="number"
+                            placeholder="Delete Item "
+                            value={id}
+                            onChange={(e) => setId(Number(e.target.value))}
+                    />
+
+                    <button className="btn btn-danger mt-3 " type="submit">Delete</button>
 
                 </form>
             </div>

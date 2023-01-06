@@ -8,6 +8,8 @@ import DeleteById from "../components/DeleteById";
 import React from "react";
 import {EditById }from "../components/EditById";
 import OrderFoodPrice from "../components/OrderFoodPrice";
+import OrderFoodWeight from "../components/OrderFoodWeight";
+import DeleteDelivery from "../components/Register/DeleteDelivery";
 
 const OrderProduct = () => {
     //make a nice about page with getall component and creat
@@ -16,8 +18,35 @@ const OrderProduct = () => {
 
         <div className="column">
             <div className="left">
+
+                <table>
+                    <thead>
+                    <tr>
+                    <th>Total Price DeliveryID</th>
+                    <th>Total Weight DeliveryID</th>
+
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>
+                            <OrderFoodPrice/>
+                        </td>
+                        <td>
+                            <OrderFoodWeight/>
+                        </td>
+
+
+
+
+
+
+                    </tr>
+                    </tbody>
+                </table>
                 <GetAll />
-                <OrderFoodPrice/>
+
 
             </div>
             <div className="column">
@@ -37,7 +66,8 @@ const OrderProduct = () => {
 
                 <Creat />
                 <EditById/>
-                <DeleteById />
+
+
 
                 </div>
         </div>

@@ -21,8 +21,8 @@ const GetByIdProduct = () => {
                     <div>
                         <div key={reservation.id}>
                             <h6>{reservation.id}</h6>
-                            <h6>Product</h6>
-                            <h5 style={{color: "#fff", fontSize: "20px",marginTop: "10px"}}>Product Id Number: {reservation.id}</h5>
+                            <h6 style={{margin:"3%"}}>Product</h6>
+                            <h5 style={{color: "#fff", fontSize: "20px",margin: "3%"}}>Product Id Number: {reservation.id}</h5>
                             <h6>{reservation.name}</h6>
                             <h6>{reservation.price}</h6>
                             <h6>{reservation.weight}</h6>

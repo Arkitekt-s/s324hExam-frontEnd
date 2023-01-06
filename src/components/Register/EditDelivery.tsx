@@ -51,16 +51,18 @@ const EditDelivery = () => {
         <div className="form-row">
             <div className="col-md-8 mb-3">
                 <form onSubmit={handleSubmit}>
-                    <h1>Edit Delivery</h1>
                     <input className="form-control mt-3" type="number"
                             placeholder="Id"
                             value={id}
                            onChange={(e) => setId(parseInt(e.target.value))} required/>
 
                     <DatePicker
+                        className="form-control datepicker mt-3"
                         selected={date}
                         onChange={handleDateChange}
                         dateFormat="yyyy/MM/dd"
+
+
                     ></DatePicker>
                     <input className="form-control mt-3" type="text"
                             placeholder="Destination"

@@ -13,7 +13,7 @@ export const Navbar = () => {
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-                    <a className="navbar-brand" href="/">SOHEIL Grocery Delivery System</a>
+                    <a className="navbar-brand" href="/">Soheil-Grocery </a>
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
                             <a className="nav-link active" aria-current="page" href="/delivery">Register Delivery</a>
@@ -27,7 +27,7 @@ export const Navbar = () => {
                     </ul>
                     <form className="d-flex">
 
-                        <a href="/search" className="btn btn-success" type="submit">Search</a>
+                        <a href="/search" className="btn btn-success" type="submit">Search Van</a>
 
 
 

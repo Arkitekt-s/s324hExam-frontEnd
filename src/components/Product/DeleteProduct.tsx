@@ -11,12 +11,12 @@ const DeleteProduct = () => {
     }
     return (
         <div className="form-row">
-            <h1>Delete Product</h1>
+            <h1 >Delete Product</h1>
             <div className="col-md-8 mb-3">
                 <form onSubmit={handleSubmit}>
                     <div className="form-row">
                         <div className="col-md-4 mb-3">
-                            <label htmlFor="validationDefault01">Id</label>
+                            <h6 style={{color: "#000",margin:"10px"}}>Id</h6>
                             <input type="number" className="form-control" id="validationDefault01" value={id} onChange={(e) => setId(Number(e.target.value))} required/>
                         </div>
                         <div className="col-md-4 mb-3">

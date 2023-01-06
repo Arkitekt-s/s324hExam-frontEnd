@@ -36,11 +36,14 @@ margin-left: 1%;
     border: solid #0000;
     border-width: var(--b) var(--b) var(--_s) var(--_s);
     background:
+            /*A conic gradient is specified by indicating a rotation angle */
             conic-gradient(at left var(--d)  bottom var(--d),
             #0000 90deg, rgb(255 255 255 /0.3) 0 225deg,rgb(255 255 255 /0.6) 0) border-box,
             conic-gradient(at left var(--_s) bottom var(--_s),
             #0000 90deg,var(--c) 0) 0 100%/calc(100% - var(--b)) calc(100% - var(--b))  border-box;
+    /*transform more than two argument*/
     transform: translate(calc(var(--d)/-1),var(--d));
+    /*clip-path with polygon is used to create a custom shape for an element*/
     clip-path:
             polygon(
                     var(--d) 0%,
@@ -50,13 +53,18 @@ margin-left: 1%;
                     100% calc(100% - var(--d)),
                     var(--d) calc(100% - var(--d))
             );
-    transition: 0.5s;
+    transition: 2.5s;
+    /*//transition delay after hover move*/
+    transition-delay: 2s;
     padding: 5%;
     margin-left: 30%;
-    background-color: #fff;
-
+    background-color: #FE9400;
+    object-position: right top;
 
 }
+
+
+
 .right-right:hover {
     transform: translate(0,0);
     clip-path:
@@ -68,6 +76,13 @@ margin-left: 1%;
                     calc(100% - var(--d)) 100%,
                     0% 100%
             );
+
+
+
+
+
+
+
 }
 
 /*3d background*/
@@ -83,7 +98,7 @@ margin-left: 1%;
     padding: 5%;
 
     white-space: nowrap;
-    background-color: #fff;
+    background-color: #f1f1f1;
 }
 .left:hover {
     background: #f1f1f1;

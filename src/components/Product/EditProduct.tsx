@@ -25,24 +25,28 @@ const EditProduct = () => {
     }
     return (
         <div className="form-row">
-            <h1>Edit Product</h1>
+            <h1 >Edit Product</h1>
             <div className="col-md-8 mb-3">
                 <form onSubmit={handleSubmit}>
+                    <h6 style={{margin:"10px"}}>Id</h6>
                     <input className="form-control mt-3" type="number"
                             placeholder="ID"
                             value={id}
                             onChange={(e) => setId(Number(e.target.value))}
                     />
+                    <h6 style={{margin:"3%"}}>Product Name</h6>
                     <input className="form-control mt-3" type="text"
                             placeholder="Name"
                             value={name}
                             onChange={(e) => setName(e.target.value)}
                     />
+                    <h6 style={{margin:"3%"}}>Price</h6>
                     <input className="form-control mt-3" type="number"
                             placeholder="Price"
                             value={price}
                             onChange={(e) => setPrice(Number(e.target.value))}
                     />
+                    <h6 style ={{margin:"3%"}}>Weight</h6>
                     <input className="form-control mt-3" type="number"
                             placeholder="Weight"
                             value={weight}

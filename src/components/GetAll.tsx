@@ -1,8 +1,24 @@
-import {useAllReservations, useReservationsByPrice} from "../hooks/UseAllOrderFood";
+import {useAllReservations, useDeleteReservationById, useReservationsByPrice} from "../hooks/UseAllOrderFood";
+import DeleteById from "./DeleteById";
+import React, {FormEvent, useState} from "react";
+import {useParams} from "react-router-dom";
 
 
 const GetAll = () => {
+    const [id, setId] = useState<number|"">("");
     const{data:reservation} = useAllReservations();
+    const {mutateAsync, isLoading,isError,data} = useDeleteReservationById(id as number);
+
+
+    const handleSubmit = (id: number) => {
+        setId(id);
+        mutateAsync(id);
+    };
+
+
+
+
+
 
 //sort the date time by the oldest in delivery table by map in reservation and going to delivery
     const sorted = reservation?.sort((a, b) => {
@@ -20,26 +36,18 @@ const GetAll = () => {
         return ( (reservation.product.weight  ) *( reservation.quantity));
     }
     );
-    //find the all same delivery id and sum the total price
-
-
-
-    //find the all same delivery id and sum the total weight
-
-
-
-
-
-
 
     // @ts-ignore
+
+
+
     return (
         <div>
             <h1>All Orders</h1>
             <table className="table table-hover  mt-3">
                 <thead>
                 <tr className="table-dark mt-3 mb-3">
-                    <th>OrderId</th>
+                    <th>ItemID</th>
                     <th>DeliveryID</th>
                     <th>Quantity</th>
                     <th>Product</th>
@@ -48,12 +56,13 @@ const GetAll = () => {
                     <th total-price={totalPrice}>Price</th>
                     <th total-weight={totalWeight}>Weight</th>
 
+
                 </tr>
                 </thead>
                 <tbody className="table">
                 {reservation?.map((reservation) => (
                     <tr key={reservation.id}>
-                        <td style={{color: "#ffff", fontSize: "24px", backgroundColor: "#CE3335", margin: "20px"}}>
+                        <td style={{color: "#ffff", fontSize: "24px", backgroundColor: "green", margin: "20px"}}>
                             {reservation.id}</td>
                         <td style={{color: "#ffff", fontSize: "24px", backgroundColor: "#3CC7E3", margin: "20px"}}>
                             {reservation.delivery.id}</td>
@@ -65,10 +74,17 @@ const GetAll = () => {
                         <td>{reservation.delivery.destination}</td>
                         <td >{reservation.product.price * reservation.quantity} DKK</td>
                         <td >{reservation.product.weight * reservation.quantity} Gram</td>
+                        {/*// @ts-ignore*/}
+                        <button className="btn btn-danger" onClick={() => handleSubmit(reservation.id)}>Delete</button>
+
                     </tr>
+
                 ))}
+
                 </tbody>
+
             </table>
+
 
 
         </div>

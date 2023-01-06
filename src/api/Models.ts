@@ -1,4 +1,5 @@
 export interface OrderFood {
+    //id? means optional property in TypeScript
     id?: number,
     quantity: number,
     product: Product;

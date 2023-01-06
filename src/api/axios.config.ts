@@ -9,12 +9,15 @@ const apiUrl = axios.create({
     }
 });
 
-//get all OrderFood
+//get all OrderFood fetch from server from crud(get-post-put-delete)api
+//its better error handling and automatically creat jason file
 const getAll=async():Promise<[OrderFood]>=>{
     const response=await apiUrl.get("/orders");
     return response.data;
 
 }
+
+
 
 //get all Delivery
 const getAllD=async():Promise<[Delivery]>=>{
@@ -30,6 +33,7 @@ const getAllP=async():Promise<[Product]>=>{
 }
 
 
+
 //get by id OrderFood
 const getById=async(id:number):Promise<OrderFood>=>{
     const response=await apiUrl.get(`/orders/${id}`);
@@ -38,6 +42,11 @@ const getById=async(id:number):Promise<OrderFood>=>{
 //get price by id orderfood
 const getByPrice=async(id:number):Promise<OrderFood>=>{
     const response=await apiUrl.get(`/orders/${id}/price`);
+    return response.data;
+}
+//get Weight by id orderfood
+const getByWeight=async(id:number):Promise<OrderFood>=>{
+    const response=await apiUrl.get(`/orders/${id}/Weight`);
     return response.data;
 }
 
@@ -118,7 +127,8 @@ export{
     update,updateP,
     updateD,
     search,searchP,
-    getByPrice
+    getByPrice,
+    getByWeight
 
 }
 
