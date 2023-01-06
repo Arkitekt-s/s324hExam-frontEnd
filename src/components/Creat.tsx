@@ -36,7 +36,7 @@ const Creat = () => {
         <div className="form-row">
             <div className="col-md-8 mb-3">
                 <form onSubmit={handleSubmit}>
-                    <h1>Order Food</h1>
+                    <h1 style={{color:"white"}}>Order Food</h1>
                     <input className="form-control mt-3" type="number"
                            placeholder="Quantity"
                            value={quantity}

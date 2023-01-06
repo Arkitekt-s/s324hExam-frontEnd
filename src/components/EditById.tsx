@@ -41,7 +41,7 @@ export const EditById = () => {
 
     return (
         <div className="form-row">
-            <h1>Edit Order</h1>
+            <h1 style={{color:"white"}}>Edit Order</h1>
             <div className="col-md-8 mb-3">
                 <form onSubmit={handleSubmit}>
                     <h6 style={{margin:"3%",color:"black"}}>Id</h6>
