@@ -26,7 +26,7 @@ Note: Even if not listed below, make sure to include, at least a few, test cases
 
 Build a Spring Boot project with Database and JPA for the entities outlined above (initially leave out Van)
 
-##Task-2 Products
+## Task-2 Products
 Add the required code to implement a REST API + a corresponding HTML/CSS/JavaScriptS client that implement the  features listed below:
 
 ●   a user can Add a Product
@@ -39,7 +39,7 @@ For the next requirements, implement first the endpoints on backend, and only ad
 
 
 
-##Task-3 Deliveries
+## Task-3 Deliveries
 
 Add the necessary changes to your back-/frontend to implement the following features
 ●   A user can create a new Delivery
@@ -51,7 +51,7 @@ Add the necessary changes to your back-/frontend to implement the following feat
 
 Complete these features, one by one (backend/frontend)
 
-##Task-4 Assign Delivery to a Van
+## Task-4 Assign Delivery to a Van
 
 Add the necessary changes to your back-/frontend to implement the following features
 ●	A user can assign a delivery to a van (assuming the total weight of the delivery does not exceed the max capacity of the Van).
