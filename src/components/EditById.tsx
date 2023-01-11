@@ -69,6 +69,7 @@ export const EditById = () => {
 
 
                     />
+
                     <h6 style={{margin:"3%",color:"black"}}>Product Id</h6>
                     <input className="form-control mt-3" type="number"
                            placeholder="Product ID"
@@ -82,6 +83,9 @@ export const EditById = () => {
                            )}
 
                     />
+
+
+
                     <button className="btn btn-primary mt-3" type="submit">Edit</button>
                 </form>
             </div>
