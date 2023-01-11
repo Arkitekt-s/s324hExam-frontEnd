@@ -48,7 +48,7 @@ const GetAllDelivery = () => {
                         <td>{member.van?.brand}</td>
                         <td>{member.van?.capacity}</td>
                         {/*// @ts-ignore*/}
-                        <button className="btn btn-danger" onClick={() => handleSubmit(member.id)}>Delete</button>
+                        <button className="btn btn-danger my-2" onClick={() => handleSubmit(member.id)}>Delete</button>
 
                     </tr>
                 ))}

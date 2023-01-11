@@ -31,8 +31,9 @@ const DeleteById = () => {
                             value={id}
                             onChange={(e) => setId(Number(e.target.value))}
                     />
+                    {/*//margin left 5rem for delete*/}
+                    <button className="btn btn-danger mt-3 ml-5" type="submit">Delete</button>
 
-                    <button className="btn btn-danger mt-3 " type="submit">Delete</button>
 
                 </form>
             </div>

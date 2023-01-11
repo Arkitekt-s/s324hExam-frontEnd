@@ -20,6 +20,8 @@ const GetAll = () => {
 
 
 
+
+
 //sort the date time by the oldest in delivery table by map in reservation and going to delivery
     const sorted = reservation?.sort((a, b) => {
         return new Date(a.delivery.date).getTime() - new Date(b.delivery.date).getTime();
@@ -75,7 +77,10 @@ const GetAll = () => {
                         <td >{reservation.product.price * reservation.quantity} DKK</td>
                         <td >{reservation.product.weight * reservation.quantity} Gram</td>
                         {/*// @ts-ignore*/}
-                        <button className="btn btn-danger" onClick={() => handleSubmit(reservation.id)}>Delete</button>
+                        <button className="btn btn-danger my-2" onClick={() => handleSubmit(reservation.id)}>Delete</button>
+                        {/*//show the price */}
+
+
 
                     </tr>
 

@@ -25,7 +25,7 @@ const DeleteDelivery = () => {
                                 value={id} onChange={(e) => setId(Number(e.target.value))}
                                 required/>
                         </div>
-                        <div className="col-md-4 mb-3">
+                        <div className="col-md-4 mb-3 my-6">
                             <button className="btn btn-danger" type="submit">Delete</button>
                         </div>
                     </div>

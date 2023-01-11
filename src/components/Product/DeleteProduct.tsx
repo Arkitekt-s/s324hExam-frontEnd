@@ -19,7 +19,7 @@ const DeleteProduct = () => {
                             <h6 style={{color: "#000",margin:"10px"}}>Id</h6>
                             <input type="number" className="form-control" id="validationDefault01" value={id} onChange={(e) => setId(Number(e.target.value))} required/>
                         </div>
-                        <div className="col-md-4 mb-3">
+                        <div className="col-md-4 mb-3 my-3">
                             <button className="btn btn-danger" type="submit">Delete</button>
                         </div>
                     </div>
